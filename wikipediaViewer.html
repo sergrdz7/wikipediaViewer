@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wiki Viewer</title>
+    <!-- Jquery -->
+    <script type="text/javascript" src="jquery-3.1.0.min.js"></script>  
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+      
+    <!-- wikepediaViewer css -->
+    <link href="wikipediaViewer.css" rel="stylesheet">  
+  </head>
+    
+    
+  <body>
+    
+    <div class="container">
+        <div id="searchContainer">
+            <h1>What's up?</h1>  
+        
+            <form>
+                <img id="searchImg" alt="search" src="search-icon.png" width="65" height="60">
+                <input id="input" type="text" name="search" placeholder="Search">
+            </form>
+        </div> 
+    </div>
+    
+    <script type="text/javascript">
+    
+    $("#input").hide();    
+    $("#searchImg").click(function(){
+        //$("#input").toggle("slow");
+        $("#input").toggle("slow");
+        this.toggle(); 
+    });
+
+         
+        
+    </script>  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+<!--     Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
