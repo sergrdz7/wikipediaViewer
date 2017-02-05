@@ -20,23 +20,56 @@
     <div class="container">
         <div id="searchContainer">
             <h1>What's up?</h1>  
-        
+               
             <form>
-                <img id="searchImg" alt="search" src="search-icon.png" width="65" height="60">
-                <input id="input" type="text" name="search" placeholder="Search">
+                <input class= "from-control" id="input" type="text" name="search" placeholder="Looking for something...">
+                <button id="searchButton" type="button" class="btn">Search</button>
+<!--                <img id="searchImg" alt="search" src="search-icon.png" width="65" height="60">-->
             </form>
+            
+            <ul id="output">
+            </ul>
+            
         </div> 
     </div>
     
     <script type="text/javascript">
-    
-    $("#input").hide();    
+    //Not using this function for now
+    //$("#input").hide();    
     $("#searchImg").click(function(){
         //$("#input").toggle("slow");
         $("#input").toggle("slow");
-        this.toggle(); 
+        //this.toggle(); 
     });
-
+        
+    $("#searchButton").on("click", function(){
+        var searchInput = $("#input").val();
+        var url = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + searchInput + "&format=json&callback=?";
+        //console.log(searchInput);
+    
+    $.ajax({
+       type: "GET",
+        url: url, 
+        async: false,
+        dataType: "json",
+        success: function(data){
+            console.log(data[1][0]); 
+            console.log(data[2][0]); 
+            console.log(data[3][0]);
+//            var heading = data[1][0];
+//            var description= data[2][0];
+//            var link = data[3][0];
+            for (var i=0; i<data[1].length; i++){
+            $("#output").prepend("<li><a href = "+ data[3][i] +">"+ data[1][i] + "</a><p>"+ data[2][i] +"</p></li>");
+            }
+        },
+        error: function(errorMessage){
+            alert("Error");
+        }
+    });
+        
+        
+    });
          
         
     </script>  
