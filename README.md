@@ -27,7 +27,7 @@ Hints Provided by freeCodeCamp
 
 * freeCodeCamp Profile: https://www.freecodecamp.com/sergrdz7
 
-* See some this working project: https://codepen.io/serg_92/pen/ZeYwYw
+* See this working project: https://codepen.io/serg_92/pen/ZeYwYw
 
 
 
